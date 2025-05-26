@@ -279,7 +279,7 @@ function setLanguagePreference(lang) {
 }
 
 async function fetchLanguageData(lang) {
-  const response = await fetch(`/assets/js/${lang}.json`); //location file of language translated text
+  const response = await fetch(`/yewb2/assets/js/${lang}.json`); //location file of language translated text
   return response.json();
 }
 
