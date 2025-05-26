@@ -1,0 +1,996 @@
+/* ===== Reset Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* for different devices, different fonts */
+  background-color: var(--background-color); /* helps with changing background color */
+  color: var(--text-color); /* helps with changing text color */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Light Mode (Default) */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --menu-color: #f2f2f2;
+  --accent-color: #ce0700;
+  --accent-color2:#01225d;
+  --accent-button: #D9D9D9;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --menu-color:  #3a3a3a;
+  --accent-color: #f28b6f;
+  --accent-color2:#787ba2;
+  --accent-button: #4E4E4E;
+}
+
+/* ===== Global Styles ===== */
+
+
+
+/* ===== Typography ===== */
+
+/* Hyperlink Global - not visible */
+
+a {
+  color: var(--text-color);
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+
+/* ===== Main-content styling ===== */
+
+main {
+  flex: 1;
+  /* padding: 1.25rem;*/
+  /*background: var(--background-color); */
+}
+
+.text-block {
+  max-width: 100%; 
+  /*max-width: 65ch; maximum charavtter count */
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.main-content {
+  /* flex-direction and display already included in the body*/
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    /*display: flex;  Make sure it's flex */
+    flex-direction: column;
+    margin: 0 1rem; /* HoPrizontal margins for breathing room */
+    padding: 1rem 0; /* Top & bottom padding */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+/* Hyperlink in main-content - blue underline*/
+
+.main-content a {
+  color: var(--accent-color2);
+  text-decoration: underline;
+}
+
+.main-content a:hover,
+.main-content a:focus {
+  text-decoration: underline;
+  filter: brightness(1.2);
+}
+
+.main-content a:visited {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+  main {
+      padding: 0.625rem;
+  }
+}
+
+/* ===== Global image styling ===== */
+
+/* Make images and elements responsive */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Components ===== */
+
+/* buttons */
+
+.button {
+  background-color: var(--menu-color);
+  font-size: 1rem;
+  border: none;
+  color: var(--text-color);
+  padding: 0.5em 1em;
+  text-align: center;
+  margin: 0.25rem 0.125rem;
+  border-radius: 0.25rem;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.button-red {
+  background-color: var(--accent-color);
+  font-size: 1rem;
+  border: none;
+  color: white;
+  padding: 0.5em 1em;
+  text-align: center;
+  margin: 0.25rem 0.125rem;
+  border-radius: 0.25rem;
+  transition: 0.3s;
+}
+
+.button-red:hover {
+  color: white;
+  filter: brightness(1.2);
+}
+
+/* == footer padding == */
+
+.footer {
+  background: var(--menu-color); 
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.9em;
+}
+
+.footer a {
+  text-decoration: none;
+  line-height: 2rem;
+  font-size: 0.9em;
+}
+
+.footer p{
+  font-size: 0.9em;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column-footer {
+  margin: auto;
+  float: left;
+  width: 33.33%;
+  padding: 0.3rem;
+  vertical-align: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content:space-evenly;
+  flex-direction: column; 
+  font-size: 0.9em;
+}
+
+.p-footer{
+  line-height: 3;
+}
+
+/*footer - responsive*/
+
+@media screen and (max-width: 600px) {
+  footer {
+    padding: 0.9 rem;
+}
+
+  .column-footer {
+    width: 100%;
+  }
+}
+
+/* == Fontawesome styling == */ 
+
+.button-icon{
+  color:var(--text-color);
+}
+
+#logo-footer {
+  max-width: auto; /* Adjust width as needed */
+  height: 6em;
+}
+
+/* == List of icons== */ 
+
+.fa-ul{
+  text-align: left;
+  line-height: 2.5;
+}
+
+/* == newsletter == */
+
+form {
+  border: 1px solid var(--background-color);
+  background-color: var(--background-color);
+  align-items: center;
+  text-align:center;
+}
+
+.container-form {
+  padding: 20px;
+  background-color: var(--menu-color);
+  align-items: center;
+}
+
+input[type=text], input[type=submit] {
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--menu-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+input{
+  height: 35px;
+  width: 40%;
+  border: 1px solid var(--text-color);
+  border-radius: 2px;
+}
+
+input[type=submit] {
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: white;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+
+/*Mobile version*/
+@media (min-width: 600px) {
+
+  section{
+  flex-direction: column;
+  vertical-align: center;
+  align-items: center;
+  background-color: red;
+  width: 100%;;
+  text-wrap:auto;
+  width: fit-content;
+  text-wrap: auto;
+  }
+}
+
+/* == header == */
+
+.header{
+  /*padding: 0.5rem 8vw 0.5rem 8vw;*/
+  padding: 1.25rem 8vw 1.25rem 8vw;
+  background: var(--menu-color); 
+  display: flex; /*it makes the design more flexible and responsive.*/
+  justify-content: space-between;
+  align-items: center;
+  max-height: 3em; /* Maximum height of the navbar */
+}
+
+/* nav in header */
+
+.nav-side {
+  display: inherit;
+  align-items: left;
+}
+
+.nav-links {
+  display: inherit;
+  list-style: none;
+  gap: 0.7em;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.language-bar{
+ /*display: inline-block;*/
+ position: absolute;
+ right: 12em;
+ display: flex;
+  list-style: none;
+  gap: 0.2em;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.language-bar a{
+  color: var(--text-color);
+  padding: 0.3em  0.4em;
+  text-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+
+  font-size: 0.9em;
+  margin: 0;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: solid var(--menu-color);
+  border: none;
+  border-radius: 0.1875rem;
+}
+
+
+.language-bar li a:hover {
+  color: var(--text-color);
+  background-color: var(--accent-button);
+  border: solid var(--menu-color);
+  border: none;
+  border-radius: 0.1875rem;
+  text-decoration: none;
+  /*bold text for visibility*/
+  font-weight: 500;
+  }
+  
+  .language-bar li a:active {
+    color: var(--background-color);
+    background-color: var(--accent-color);
+    border: solid var(--menu-color);
+    border: none;
+    border-radius: 0.1875rem;
+    text-decoration: none;
+  
+   
+   }
+/* nav links style*/
+
+.nav-links li a {
+color: var(--text-color);
+padding: 0.3em  0.6em;
+text-align: center;
+text-decoration: none;
+/*display: inline-block;*/
+display: inherit;
+font-size: 0.9em;
+margin: 0;
+transition-duration: 0.4s;
+cursor: pointer;
+border: solid var(--menu-color);
+border: none;
+border-radius: 0.1875rem;
+}
+
+.nav-links li a:hover {
+color: var(--text-color);
+background-color: var(--accent-button);
+border: solid var(--menu-color);
+border: none;
+border-radius: 0.1875rem;
+text-decoration: none;
+/*bold text for visibility*/
+font-weight: 500;
+}
+
+.nav-links li a:active {
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  border: solid var(--menu-color);
+  border: none;
+  border-radius: 0.1875rem;
+  text-decoration: none;
+
+ 
+ }
+
+/*icons*/
+.nav-side-icons {
+  display: inherit;
+  align-items: center;
+  gap: 0.7em;
+
+}
+
+.nav-icon a{
+  display: inline-block;
+  color: var(--text-color);
+  text-align: center;
+  font-size: 0.9em;
+  transition-duration: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.3em  0.6em;
+  border: 0px solid var(--menu-color);
+  border-radius: 0.1875rem;
+}
+
+.nav-icon a:hover,
+.nav-icon a:focus  {
+  background-color: var(--accent-button);
+}
+
+.nav-icon a:active  {
+  color: white;
+  background-color: var(--accent-color);
+}
+
+.nav-icon:visited  {
+  color: var(--text-color);
+}
+
+.nav-icon-burger {
+  display: none;
+  color: var(--text-color);
+  padding: 0.3em  0.6em;
+  border: 0px solid var(--menu-color);
+  border-radius: 0.1875rem;
+}
+
+.nav-icon-burger:hover,
+.nav-icon-burger:focus{
+  background-color: var(--accent-button);
+}
+
+.nav-icon-burger a:active  {
+  color: white;
+}
+
+.nav-icon-burger:active  {
+  background-color: var(--accent-color);
+}
+
+.nav-icon-burger:visited{
+  color: inherit;
+}
+
+.nav-logo {
+  width: 5em;
+  height: auto;
+  margin-right: auto;
+  margin-top:auto;
+  display: flex;
+}
+
+/* ===== Header - mobile version ===== */
+
+/* Not active */
+@media screen and (max-width: 600px) {
+  .nav-icon-burger {
+    display: inherit;
+  }
+  .nav-links {
+      display: none;
+    }
+
+/* Active, mobilemenu() header.responsive */
+@media screen and (max-width: 600px) {
+  
+      .header.responsive .nav-links  {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--menu-color);
+        position: absolute;
+        top: 3rem;
+        right: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .header.responsive .nav-links a {
+        display: inline-block;
+        height: 3rem;
+        align-content: center;
+        margin: 0.5em ;
+        border: 0px solid var(--menu-color);
+        border-radius: 0.1875rem;
+      }
+  }
+}
+  
+/* ===== Pages ===== */
+
+/* ===== Ongoing projects ===== */
+
+/*TO DO 3 pictures animated*/
+/*Little flags under*/
+#img-project {
+  width: 100%;
+  height: auto;
+  float: auto;
+}
+
+/* Optional: Style sections */
+
+section {
+  flex: 1;
+  flex-direction: row;
+  /* background: #f3f3f3; */
+ /* border: 1px solid lightgray;*/
+  margin: 1.25rem;
+  padding: 0;
+  text-align: center;
+  width: fit-content;
+  text-wrap: auto;
+}
+
+section p{
+  text-align: left;
+  line-height: 2;
+}
+clearfix > h2{
+  text-align: right;
+}
+
+.box {
+  float: left;
+  width: fit-content;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+
+/* ===== Second way - styling with flexbox ===== */
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  align-self: center;
+  /*flex-wrap: wrap;  optional, helps with responsiveness */
+}
+
+.flex-container > div {
+  background-color:var(--menu-color);
+  color:vat(--text-color);
+  width: 60vh;
+  margin: 10px;
+  padding-bottom: 0.5rem;
+  line-height: 1rem;
+  flex: 1 1 50vh;
+  max-width: 60vh;
+  box-sizing: border-box; 
+  text-wrap: auto;
+  max-height: auto;
+}
+
+.flex-container1 {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.flex-container1 > .text-column1 {
+  width: 25%;
+  margin: 1rem;
+  box-sizing: border-box; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  height: auto;
+
+}
+
+.flex-container1 > .text-column2 {
+  width: 75%;
+  margin: 1rem;
+  box-sizing: border-box; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  height: auto;
+
+}
+
+@media (max-width: 800px) {
+  .flex-container1 {
+    flex-direction: column;
+    margin: 1rem;
+    justify-content:space-evenly;
+    align-items: center;
+    display: flex;
+  }
+  .flex-container1 > .text-column1 {
+    flex: auto;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    height: auto;
+    margin:1rem;
+
+  }
+  .flex-container1 > .text-column2 {
+    flex: auto;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    height: auto;
+
+  }
+}
+
+.container-image {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container-image img {vertical-align: middle;}
+
+.container-image .content-image {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 	1.25rem;
+}
+
+.flex-container a,
+.flex-container p,
+.flex-container h1,
+.flex-container h2 {
+  line-height: 1;
+  margin: 0;
+  padding: 0.3rem;
+  border-radius: 0;
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .flex-container > div {
+    flex: auto;
+    max-width: 100%;
+  }
+
+  #img-project {
+    width: fit-content;
+    height: auto;
+    float: none;
+  }
+}
+
+.column-description, .column-description2 {
+  margin: auto;
+  float: left;
+  text-align: left;
+  width: 25%;
+  padding: 0.3rem;
+  vertical-align: center;
+  display: flex;
+  justify-content:space-evenly;
+  flex-direction: column; 
+}
+
+.column-description2 {
+  width: 75%;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.slide-show-img{
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  text-align: center;
+}
+
+/* Position the "prev" on the left */
+.prev {
+  left: 0; /* or left: 0 if you want it tight to the edge */
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next" on the right */
+.next {
+  right: 0; /* was right: 25%, which pushed it too far in */
+  border-radius: 3px 0 0 3px;
+}
+
+.slideshow-container a{
+  color:white;
+  text-decoration: none;
+  opacity: 0.5;
+  background-color: black;
+  border: 3rem solid black;
+  border: none;
+  border-radius: 3rem;
+  padding: 0.7rem;
+}
+
+.slideshow-container a:hover{
+  color:white;
+  text-decoration: none;
+  opacity: 0.5;
+  background-color: black;
+  border: 3rem solid black;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 3rem;
+}
+
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+/* language button*/
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/*
+.dropdown {
+  float: left;
+  overflow: hidden;
+  display: inherit;
+  color:var(--text-color)
+}
+*/
+.dropdown .dropbtn {   
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-family: inherit;
+  color:var(--text-color);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top:2em;
+  margin-left:-2em;
+  box-shadow: var(--accent-button);
+  background-color: var(--menu-color);
+  z-index: 5;
+}
+
+.dropdown-content a {
+  float: none;
+  color:var(--text-color);
+  background-color: var(--menu-color);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+  display: inline-block;
+  position: absolute;
+  color:red;
+  /*font-weight: 300;*/
+}
+
+.dropdown-content a:hover {
+  font-weight: 600;
+}
+ 
+
+.dropdown-content a:focus {
+  font-weight: 600;
+  color:white;
+  background-color: var(--accent-color);
+  transition: 0s;
+}
+
+/* p without goin into new line, for displaying text */
+#p-same-line {
+  display: inline;
+}
+
+.p-lang{
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.dropbtn1 {
+  color: var(--text-color);
+  background-color: var(--menu-color);
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown1-content {
+  display: none;
+  position: absolute;  /* Fix from invalid '0' */
+  right: 0;          /* Align the dropdown to the left of its container */
+  background-color:var(--menu-color);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border: solid var(--menu-color);
+  border: none;
+  border-radius: 0.1875rem;
+  font-size: 0.9em;
+}
+
+.dropdown1-content a {
+  color:var(--text-color);
+  font-size: 0.9em;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border: solid var(--menu-color);
+  border: none;
+  border-radius: 0.1875rem;
+}
+
+.dropdown1-content a:hover {
+  background-color: var(--accent-button); 
+  font-weight: 600;
+  border: solid var(--menu-color);
+border: none;
+border-radius: 0.1875rem;
+}
+
+.dropdown1-content a:focus {
+  background-color: var(--accent-color); 
+  color:white;
+}
+
+.dropdown1:hover .dropdown1-content {
+  display: block;
+}
+
+.dropdown1:hover .dropbtn {
+  background-color: var(--menu-color);
+}
+
+
+/* Default (light theme) */
+
+.dark-logo {
+  display: none;
+}
+
+/* When dark mode is active */
+body.dark-mode .light-logo {
+  display: none;
+}
+body.dark-mode .dark-logo {
+  display: flex;
+}
+
+.logo-footer {
+  max-width: auto; /* Adjust width as needed */
+  height: 6em;
+}
+
+/*top button*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: var(--accent-button);
+}

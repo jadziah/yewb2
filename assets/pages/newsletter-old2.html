@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <script src="/assets/js/app.js"></script>    
+    </head>
+  
+    <body>
+        <div id="header"></div> 
+    <main class="main-content">
+        <section>
+        <h1>Join us</h1>
+ 
+        <br></br>
+        <form id="signupForm">
+            <input type="name" id="name" name="name" placeholder="Enter your name" required>
+            <br></br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br></br>
+            <button class="button" type="submit">Subscribe</button>
+        </form>
+    
+        <script>
+              document.getElementById('signupForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+    
+                const response = await fetch('/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email })
+                });
+    
+                const result = await response.json();
+                alert(result.message);
+            });
+        </script>
+    </section>
+    </main>
+
+    <div id="footer"></div> 
+</body>
+</html>

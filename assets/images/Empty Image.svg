@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="151.24207mm"
+   height="98.290619mm"
+   viewBox="0 0 151.24207 98.290619"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch18">
+      <stop
+         style="stop-color:#8e8e8e;stop-opacity:1;"
+         offset="0"
+         id="stop18" />
+    </linearGradient>
+    <pattern
+       xlink:href="#Strips1_1"
+       preserveAspectRatio="xMidYMid"
+       id="pattern17"
+       patternTransform="matrix(0.4087359,0.28961365,-0.27598751,0.42891614,-459.91224,-52.170665)"
+       x="0"
+       y="0" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="2"
+       height="10"
+       patternTransform="translate(0,0) scale(2,2)"
+       preserveAspectRatio="xMidYMid"
+       id="Strips1_1"
+       style="fill:#8e8e8e">
+      <rect
+   style="stroke:none"
+   x="0"
+   y="-0.5"
+   width="1"
+   height="11"
+   id="rect134" />
+
+    </pattern>
+    <linearGradient
+       xlink:href="#swatch18"
+       id="linearGradient18"
+       x1="41.284981"
+       y1="114.1602"
+       x2="176.28784"
+       y2="114.1602"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1259994,0,0,1.1815926,-13.57595,-5.2646263)" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-33.296441,-80.480908)">
+    <rect
+       style="fill:url(#pattern17);fill-opacity:1;stroke:url(#linearGradient18);stroke-width:0.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7"
+       width="150.84207"
+       height="97.890617"
+       x="33.496441"
+       y="80.680908" />
+  </g>
+</svg>

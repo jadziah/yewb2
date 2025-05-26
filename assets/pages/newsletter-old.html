@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <script src="/assets/js/app.js"></script>    
+    </head>
+  
+    <body>
+        <div id="header"></div> 
+    <main class="main-content">
+        <section>
+        <h1>Discover the life of young people in Armenia!</h1>
+        <br></br>
+        <p>Dear colleagues,</p>
+        <p>Once again, Youth Exchanges without Borders is organizing a youth project in the South Caucasus. Over six days (+2 travel days), we will explore the lives of young adults in Armenia, with a spe-cial focus on globalization and its impact on youth perspectives. As part of the project, we will visit various institutions on site, including a youth cen-ter, an organic farm, and an export-oriented com-pany.</p>
+       <img src="/assets/images/Image1.jpg">
+        <form id="signupForm">
+            <input type="name" id="name" name="name" placeholder="Enter your name" required>
+            <br></br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br></br>
+            <button class="button" type="submit">Subscribe</button>
+        </form>
+    
+        <script>
+              document.getElementById('signupForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+    
+                const response = await fetch('/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email })
+                });
+    
+                const result = await response.json();
+                alert(result.message);
+            });
+        </script>
+    </section>
+    </main>
+
+    <div id="footer"></div> 
+</body>
+</html>
