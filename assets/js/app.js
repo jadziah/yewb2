@@ -5,8 +5,8 @@ window.addEventListener("DOMContentLoaded", () => {
   topFunction();
   const theme = localStorage.getItem("theme");
   const logoHeader = document.getElementById('logo-header');
-  const darkLogo = '/assets/images/logo_dark.svg';
-  const lightLogo = '/assets/images/logo_light.svg';
+  const darkLogo = './assets/images/logo_dark.svg';
+  const lightLogo = './assets/images/logo_light.svg';
 
   if (theme == "dark") {
     document.body.classList.add("dark-mode");
@@ -42,8 +42,8 @@ function myFunctionDark22() {
   localStorage.setItem("theme", isDark ? "dark" : "light");
 
   const logoHeader = document.getElementById('logo-header');
-  const darkLogo = '/assets/images/logo_dark.svg';
-  const lightLogo = '/assets/images/logo_light.svg';
+  const darkLogo = './assets/images/logo_dark.svg';
+  const lightLogo = './assets/images/logo_light.svg';
 
   if (logoHeader) logoHeader.src = isDark ? darkLogo : lightLogo;
 }
@@ -129,8 +129,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 //Load all functions to DOM, and make sure it works
 document.addEventListener("DOMContentLoaded", async (event) => {
-    loadComponent("header", "/components/header.html");
-    loadComponent("footer", "/components/footer.html");
+    loadComponent("header", "./components/header.html");
+    loadComponent("footer", "./components/footer.html");
     console.log("DOM fully loaded and components loaded.");
   });
 
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
      // Add a link to a website small icon*/
      const linkIcon = document.createElement('link');
      linkIcon.rel = 'icon';
-     linkIcon.href = '/assets/icons/icon.ico'; // Icon link
+     linkIcon.href = './assets/icons/icon.ico'; // Icon link
      linkIcon.type = 'image/x-icon';
      document.head.appendChild(linkIcon);
 
