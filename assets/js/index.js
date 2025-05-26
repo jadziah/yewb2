@@ -12,7 +12,7 @@ i18next
   .use(middleware.LanguageDetector)
   .init({
     fallbackLng: "en", // Default language
-    preload: ["en", "es", "fr"], // Load available languages
+    preload: ["en", "es", "fr", "it"], // Load available languages
     backend: {
       loadPath: "./locales/{{lng}}/translation.json", // Translation files
     },
